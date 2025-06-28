@@ -54,10 +54,12 @@ body::after {
 
 .app {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   padding: 20px;
+  padding-bottom: 80px;
   position: relative;
   z-index: 2;
 }
@@ -203,6 +205,24 @@ body::after {
   body::after {
     font-size: 2rem;
   }
+  
+  .info-banner {
+    padding: 12px 15px;
+  }
+  
+  .banner-text {
+    font-size: 1rem;
+  }
+  
+  .banner-text::before,
+  .banner-text::after {
+    font-size: 1rem;
+  }
+  
+  .contact-btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -221,4 +241,195 @@ body::after {
   body::after {
     font-size: 1.5rem;
   }
+  
+  .info-banner {
+    padding: 10px 12px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .banner-text {
+    font-size: 0.9rem;
+  }
+  
+  .banner-text::before,
+  .banner-text::after {
+    font-size: 0.9rem;
+  }
+  
+  .contact-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  
+  .app {
+    padding-bottom: 120px;
+  }
+}
+
+/* Info Banner */
+.info-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #ff0080, #00ffff, #ff8000, #8000ff);
+  background-size: 300% 300%;
+  animation: bannerGlow 3s ease-in-out infinite;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 
+    0 -2px 10px rgba(0,0,0,0.3),
+    0 0 20px rgba(255,0,128,0.5),
+    0 0 40px rgba(0,255,255,0.3);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-weight: bold;
+  border-top: 3px solid #fff;
+}
+
+@keyframes bannerGlow {
+  0%, 100% { 
+    background-position: 0% 50%;
+    box-shadow: 
+      0 -2px 10px rgba(0,0,0,0.3),
+      0 0 20px rgba(255,0,128,0.5),
+      0 0 40px rgba(0,255,255,0.3);
+  }
+  50% { 
+    background-position: 100% 50%;
+    box-shadow: 
+      0 -2px 10px rgba(0,0,0,0.3),
+      0 0 30px rgba(255,0,128,0.8),
+      0 0 60px rgba(0,255,255,0.6),
+      0 0 80px rgba(255,128,0,0.4);
+  }
+}
+
+.banner-text {
+  font-size: 1.1rem;
+  text-shadow: 
+    2px 2px 4px rgba(0,0,0,0.5),
+    0 0 10px rgba(255,255,255,0.8);
+  animation: textPulse 2s ease-in-out infinite;
+  position: relative;
+}
+
+.banner-text::before {
+  content: '🔥';
+  position: absolute;
+  left: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  animation: fireSpin 1.5s linear infinite;
+}
+
+.banner-text::after {
+  content: '💎';
+  position: absolute;
+  right: -25px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  animation: diamondSparkle 2s ease-in-out infinite;
+}
+
+@keyframes textPulse {
+  0%, 100% { 
+    transform: scale(1);
+    text-shadow: 
+      2px 2px 4px rgba(0,0,0,0.5),
+      0 0 10px rgba(255,255,255,0.8);
+  }
+  50% { 
+    transform: scale(1.05);
+    text-shadow: 
+      2px 2px 4px rgba(0,0,0,0.5),
+      0 0 20px rgba(255,255,255,1),
+      0 0 30px rgba(255,0,128,0.8);
+  }
+}
+
+@keyframes fireSpin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+@keyframes diamondSparkle {
+  0%, 100% { 
+    transform: translateY(-50%) scale(1);
+    filter: brightness(1);
+  }
+  50% { 
+    transform: translateY(-50%) scale(1.3);
+    filter: brightness(1.5) drop-shadow(0 0 10px rgba(255,255,255,0.8));
+  }
+}
+
+.contact-btn {
+  background: linear-gradient(45deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
+  border: 3px solid white;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  animation: buttonGlow 2.5s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+  transform: rotate(45deg);
+  animation: buttonShine 3s linear infinite;
+}
+
+@keyframes buttonGlow {
+  0%, 100% { 
+    box-shadow: 
+      0 0 10px rgba(255,255,255,0.5),
+      0 0 20px rgba(255,0,128,0.3),
+      inset 0 0 10px rgba(255,255,255,0.1);
+  }
+  50% { 
+    box-shadow: 
+      0 0 20px rgba(255,255,255,0.8),
+      0 0 40px rgba(255,0,128,0.6),
+      0 0 60px rgba(0,255,255,0.4),
+      inset 0 0 20px rgba(255,255,255,0.2);
+  }
+}
+
+@keyframes buttonShine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.contact-btn:hover {
+  background: linear-gradient(45deg, rgba(255,255,255,0.5), rgba(255,255,255,0.2));
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 
+    0 8px 25px rgba(0,0,0,0.3),
+    0 0 30px rgba(255,255,255,1),
+    0 0 50px rgba(255,0,128,0.8),
+    0 0 70px rgba(0,255,255,0.6);
+}
+
+.contact-btn:active {
+  transform: translateY(-1px) scale(1.02);
 }
