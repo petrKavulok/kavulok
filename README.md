@@ -1,6 +1,6 @@
-# 90s Miami Aesthetic - Honzův bezbýznamný kamarád
+# 90s Miami Aesthetic - Honzův bezvýznamný kamarád
 
-A Vite React TypeScript project featuring authentic 90s Miami aesthetics with the Czech text "Honzův bezbýznamný kamarád". Inspired by Miami Vice, neon lights, and the vibrant 90s Miami scene.
+A Vite React TypeScript project featuring authentic 90s Miami aesthetics with the Czech text "Honzův bezvýznamný kamarád". Inspired by Miami Vice, neon lights, and the vibrant 90s Miami scene.
 
 ## Features
 

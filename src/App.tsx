@@ -6,7 +6,7 @@ function App() {
       <div className="content">
         <div className="miami-diamond">💎</div>
         <div className="miami-sunset">🌅</div>
-        <h1 className="title">Honzův bezbýznamný kamarád</h1>
+        <h1 className="title">Honzův bezvýznamný kamarád</h1>
       </div>
     </div>
   )
