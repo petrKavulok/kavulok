@@ -107,8 +107,8 @@ body::after {
   text-shadow: 
     3px 3px 0 #ff0080,
     6px 6px 0 #00ffff,
-    9px 9px 0 #ff8000,
-    12px 12px 0 #8000ff;
+    9px 9px 0 #ff8000;
+    /* 12px 12px 0 #8000ff; */
   letter-spacing: 3px;
   position: relative;
   z-index: 1;
@@ -189,16 +189,36 @@ body::after {
 /* Responsive design for Miami aesthetic */
 @media (max-width: 768px) {
   .title {
-    font-size: 2.8rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
   }
   
   .content {
-    padding: 40px;
-    margin: 20px;
+    padding: 30px 20px;
+    margin: 15px;
+    border-radius: 20px;
   }
   
   body::before,
   body::after {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .content {
+    padding: 25px 15px;
+    margin: 10px;
+    border-radius: 15px;
+  }
+  
+  body::before,
+  body::after {
+    font-size: 1.5rem;
   }
 }
