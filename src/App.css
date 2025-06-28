@@ -8,7 +8,7 @@
 }
 
 body {
-  font-family: 'Comic Sans MS', sans-serif;
+  font-family: 'Comic Sans MS';
   background: linear-gradient(135deg, #ff0080, #00ffff, #ff8000, #8000ff, #00ff80);
   background-size: 400% 400%;
   animation: miamiGradient 6s ease infinite;
